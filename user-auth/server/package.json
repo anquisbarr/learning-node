@@ -1,0 +1,32 @@
+{
+	"name": "user-auth",
+	"module": "index.ts",
+	"type": "module",
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/express": "4.17.21",
+		"drizzle-kit": "^0.22.7",
+		"standard": "17.1.0"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"@libsql/client": "^0.6.2",
+		"@t3-oss/env-core": "^0.10.1",
+		"@types/bcrypt": "^5.0.2",
+		"@types/morgan": "^1.9.9",
+		"bcrypt": "^5.1.1",
+		"drizzle-orm": "^0.31.2",
+		"drizzle-zod": "^0.5.1",
+		"express": "^4.19.2",
+		"morgan": "^1.10.0",
+		"zod": "^3.23.8"
+	},
+	"scripts": {
+		"dev": "bun --hot index.ts",
+		"db:migrate": "drizzle-kit generate --config ./db/drizzle.config.ts",
+		"db:push": "drizzle-kit push --config ./db/drizzle.config.ts",
+		"studio": "drizzle-kit studio --config ./db/drizzle.config.ts"
+	}
+}
